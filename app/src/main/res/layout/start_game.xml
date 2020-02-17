@@ -20,14 +20,15 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_stopwatch" />
+                app:srcCompat="@drawable/ic_stopwatch"
+                android:contentDescription="@string/content_description_icon"/>
 
             <TextView
                 android:id="@+id/tv_timer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:text="30s"
+                android:text="@string/tv_timer"
                 android:layout_gravity="center"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -35,13 +36,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="end"
             android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_star" />
+                app:srcCompat="@drawable/ic_star"
+                android:contentDescription="@string/content_description_icon"/>
 
             <TextView
                 android:id="@+id/tv_points"
@@ -49,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_gravity="center"
-                android:text="0/0"
+                android:text="@string/tv_points"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -70,13 +72,13 @@
                 android:id="@+id/tv_sum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1 + 2 ="
+                android:text="@string/tv_sum"
                 android:textSize="32sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\?"
+                android:text="@string/tv_answer"
                 android:textColor="@android:color/holo_red_light"
                 android:textSize="32sp" />
 
@@ -98,7 +100,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="7"
+                    android:text="@string/btn_text"
                     android:textSize="80sp"
                     android:background="#0093D1" />
 
@@ -107,7 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="7"
+                    android:text="@string/btn_text"
                     android:textSize="80sp"
                     android:background="#F2635F" />
             </LinearLayout>
@@ -122,7 +124,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="7"
+                    android:text="@string/btn_text"
                     android:textSize="80sp"
                     android:background="#F4D00C" />
 
@@ -131,7 +133,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="7"
+                    android:text="@string/btn_text"
                     android:textSize="80sp"
                     android:background="#E0A025" />
             </LinearLayout>
@@ -141,13 +143,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_speaker"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/content_description_icon"/>
 
         <TextView
             android:id="@+id/tv_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Correct!"
             android:textSize="32sp"
             android:layout_marginTop="5dp"/>
     </LinearLayout>
