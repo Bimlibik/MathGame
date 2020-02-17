@@ -8,5 +8,6 @@ class StartGame : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
+        setContentView(R.layout.start_game)
     }
 }
