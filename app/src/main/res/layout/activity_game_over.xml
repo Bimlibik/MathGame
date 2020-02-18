@@ -39,6 +39,17 @@
         android:orientation="vertical"
         android:gravity="center">
 
+        <TextView
+            android:id="@+id/tv_high_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_high_score"
+            android:textSize="30sp"
+            android:textColor="@android:color/holo_red_light"
+            android:background="@drawable/border"
+            android:visibility="gone"/>
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -57,6 +68,27 @@
                 android:text="@string/tv_score"
                 android:textColor="@android:color/holo_green_light"
                 android:textSize="60sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_personal_best"
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/tv_best"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/tv_best"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="20sp"/>
+
         </LinearLayout>
 
         <TextView

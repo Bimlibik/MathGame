@@ -13,4 +13,7 @@
     <string name="tv_game_over">GameOver</string>
     <string name="content_description_restart_game">Restart game</string>
     <string name="content_description_exit_game">Exit game</string>
+    <string name="tv_high_score">High Score</string>
+    <string name="tv_personal_best">Personal best:</string>
+    <string name="tv_best">best</string>
 </resources>
