@@ -3,7 +3,6 @@ package com.foxy.mathgame
 import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +14,7 @@ class StartGame : AppCompatActivity() {
 
     private var op1 = 0
     private var op2 = 0
-    private var sum = 0
+    private var correctAnswer = 0
     private var points = 0
     private var numberOfQuestions = 0
     private var millisUntilFinished: Long = 30000
@@ -55,25 +54,29 @@ class StartGame : AppCompatActivity() {
     private fun generateQuestion() {
         numberOfQuestions++
         val btnIds = arrayListOf(btn0.id, btn1.id, btn2.id, btn3.id)
+        val operators = arrayListOf("+", "-", "*", "÷")
         val random = Random()
+        var selectedOperator = operators[random.nextInt(4)]
+
         op1 = random.nextInt(10)
-        op2 = random.nextInt(10)
-        sum = op1 + op2
-        tv_sum.text = getString(R.string.tv_sum, op1, op2)
+        op2 = random.nextInt(9) + 1
+        correctAnswer = getAnswer(selectedOperator)
+        tv_sum.text = "$op1 $selectedOperator $op2 = "
 
         val correctAnswerPosition = random.nextInt(4)
-        findViewById<Button>(btnIds[correctAnswerPosition]).text = "$sum"
+        findViewById<Button>(btnIds[correctAnswerPosition]).text = "$correctAnswer"
 
-        var sumOthers: Int
+        var incorrectAnswer: Int
         val incorrectAnswers = ArrayList<Int>()
         while (incorrectAnswers.size < btnIds.size) {
             op1 = random.nextInt(10)
-            op2 = random.nextInt(10)
-            sumOthers = op1 + op2
-            if (sum == sumOthers) {
+            op2 = random.nextInt(9) + 1
+            selectedOperator = operators[random.nextInt(4)]
+            incorrectAnswer = getAnswer(selectedOperator)
+            if (correctAnswer == incorrectAnswer) {
                 continue
             }
-            incorrectAnswers.add(sumOthers)
+            incorrectAnswers.add(incorrectAnswer)
         }
 
         for (i in btnIds.indices) {
@@ -81,6 +84,16 @@ class StartGame : AppCompatActivity() {
                 continue
             }
             findViewById<Button>(btnIds[i]).text = "${incorrectAnswers[i]}"
+        }
+    }
+
+    private fun getAnswer(operator: String) : Int {
+        return when(operator) {
+            "+" -> op1 + op2
+            "-" -> op1 - op2
+            "*" -> op1 * op2
+            "÷" -> op1 / op2
+            else -> 0
         }
     }
 
@@ -93,7 +106,7 @@ class StartGame : AppCompatActivity() {
 
     private val listener = View.OnClickListener {
         val answer = (it as Button).text.toString().toInt()
-        if (answer == sum) {
+        if (answer == correctAnswer) {
             points++
             tv_result.text = getString(R.string.tv_result_correct)
         } else {

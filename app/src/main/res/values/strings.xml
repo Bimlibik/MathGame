@@ -2,7 +2,7 @@
     <string name="app_name">MathGame</string>
     <string name="tv_play">Play</string>
     <string name="tv_timer">%ds</string>
-    <string name="tv_sum">%1d + %2d =</string>
+    <string name="tv_sum">%1$d %2$s %3$d =</string>
     <string name="tv_points">%1d/%2d</string>
     <string name="tv_result_correct">Correct!</string>
     <string name="tv_result_wrong">Wrong!</string>
