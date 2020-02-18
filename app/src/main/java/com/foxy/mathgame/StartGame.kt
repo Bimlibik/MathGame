@@ -1,11 +1,12 @@
 package com.foxy.mathgame
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.start_game.*
+import kotlinx.android.synthetic.main.activity_start_game.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -20,7 +21,7 @@ class StartGame : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.start_game)
+        setContentView(R.layout.activity_start_game)
 
         btn0.setOnClickListener(listener)
         btn1.setOnClickListener(listener)
@@ -39,6 +40,7 @@ class StartGame : AppCompatActivity() {
                 btn1.isClickable = false
                 btn2.isClickable = false
                 btn3.isClickable = false
+                startGameOver()
             }
 
             override fun onTick(millis: Long) {
@@ -78,6 +80,13 @@ class StartGame : AppCompatActivity() {
             }
             findViewById<Button>(btnIds[i]).text = "${incorrectAnswers[i]}"
         }
+    }
+
+    private fun startGameOver() {
+        val intent = Intent(this, GameOver::class.java)
+        intent.putExtra("points", points)
+        startActivity(intent)
+        finish()
     }
 
     private val listener = View.OnClickListener {

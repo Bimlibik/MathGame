@@ -9,4 +9,8 @@
     <string name="content_description_icon">icon</string>
     <string name="tv_answer">\?</string>
     <string name="btn_text">7</string>
+    <string name="tv_score">Score</string>
+    <string name="tv_game_over">GameOver</string>
+    <string name="content_description_restart_game">Restart game</string>
+    <string name="content_description_exit_game">Exit game</string>
 </resources>
