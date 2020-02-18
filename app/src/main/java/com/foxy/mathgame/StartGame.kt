@@ -12,12 +12,11 @@ import kotlin.collections.ArrayList
 
 class StartGame : AppCompatActivity() {
 
-    private var op1 = 0
-    private var op2 = 0
     private var correctAnswer = 0
     private var points = 0
     private var numberOfQuestions = 0
     private var millisUntilFinished: Long = 30000
+    private val operators = arrayListOf("+", "-", "*", "÷")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,14 +52,14 @@ class StartGame : AppCompatActivity() {
 
     private fun generateQuestion() {
         numberOfQuestions++
+
         val btnIds = arrayListOf(btn0.id, btn1.id, btn2.id, btn3.id)
-        val operators = arrayListOf("+", "-", "*", "÷")
         val random = Random()
         var selectedOperator = operators[random.nextInt(4)]
+        var op1 = random.nextInt(10)
+        var op2 = random.nextInt(9) + 1
 
-        op1 = random.nextInt(10)
-        op2 = random.nextInt(9) + 1
-        correctAnswer = getAnswer(selectedOperator)
+        correctAnswer = getAnswer(selectedOperator, op1, op2)
         tv_sum.text = "$op1 $selectedOperator $op2 = "
 
         val correctAnswerPosition = random.nextInt(4)
@@ -72,7 +71,7 @@ class StartGame : AppCompatActivity() {
             op1 = random.nextInt(10)
             op2 = random.nextInt(9) + 1
             selectedOperator = operators[random.nextInt(4)]
-            incorrectAnswer = getAnswer(selectedOperator)
+            incorrectAnswer = getAnswer(selectedOperator, op1, op2)
             if (correctAnswer == incorrectAnswer) {
                 continue
             }
@@ -87,7 +86,7 @@ class StartGame : AppCompatActivity() {
         }
     }
 
-    private fun getAnswer(operator: String) : Int {
+    private fun getAnswer(operator: String, op1: Int, op2: Int) : Int {
         return when(operator) {
             "+" -> op1 + op2
             "-" -> op1 - op2
