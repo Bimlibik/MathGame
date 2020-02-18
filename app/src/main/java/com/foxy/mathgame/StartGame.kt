@@ -22,6 +22,7 @@ class StartGame : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start_game)
+        supportActionBar?.hide()
 
         btn0.setOnClickListener(listener)
         btn1.setOnClickListener(listener)

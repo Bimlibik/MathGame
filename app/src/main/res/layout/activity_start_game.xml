@@ -21,7 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_stopwatch"
-                android:contentDescription="@string/content_description_icon"/>
+                android:contentDescription="@string/content_description_icon" />
 
             <TextView
                 android:id="@+id/tv_timer"
@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_star"
-                android:contentDescription="@string/content_description_icon"/>
+                android:contentDescription="@string/content_description_icon" />
 
             <TextView
                 android:id="@+id/tv_points"
@@ -84,74 +84,69 @@
 
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp">
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/btn0"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:background="#0093D1"
+                android:text="@string/btn_text"
+                android:textSize="80sp" />
 
-                <Button
-                    android:id="@+id/btn0"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/btn_text"
-                    android:textSize="80sp"
-                    android:background="#0093D1" />
-
-                <Button
-                    android:id="@+id/btn1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/btn_text"
-                    android:textSize="80sp"
-                    android:background="#F2635F" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btn2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/btn_text"
-                    android:textSize="80sp"
-                    android:background="#F4D00C" />
-
-                <Button
-                    android:id="@+id/btn3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/btn_text"
-                    android:textSize="80sp"
-                    android:background="#E0A025" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#F2635F"
+                android:text="@string/btn_text"
+                android:textSize="80sp" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#F4D00C"
+                android:text="@string/btn_text"
+                android:textSize="80sp" />
+
+            <Button
+                android:id="@+id/btn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#E0A025"
+                android:text="@string/btn_text"
+                android:textSize="80sp" />
+        </LinearLayout>
+
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_speaker"
             android:layout_marginTop="10dp"
-            android:contentDescription="@string/content_description_icon"/>
+            android:contentDescription="@string/content_description_icon"
+            app:srcCompat="@drawable/ic_speaker" />
 
         <TextView
             android:id="@+id/tv_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="32sp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:textSize="32sp" />
     </LinearLayout>
 
 </LinearLayout>

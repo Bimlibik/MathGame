@@ -10,6 +10,7 @@ class GameOver : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_over)
+        supportActionBar?.hide()
 
         val points = intent.getIntExtra("points", 0)
         tv_points.text = points.toString()
